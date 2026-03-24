@@ -1,0 +1,22 @@
+---
+description: Regra para deploy automático no Netlify após git push
+alwaysApply: true
+---
+
+# Deploy Automático no Netlify
+
+Sempre que o usuário pedir commit e push (ou só push), após o push bem-sucedido, execute automaticamente o deploy no Netlify:
+
+```
+npx netlify-cli deploy --prod --dir="."
+```
+
+Se o site ainda não estiver linkado localmente, primeiro execute:
+
+```
+npx netlify-cli link --name <nome-do-site>
+```
+
+O nome do site no Netlify segue o padrão do nome do repositório (ex: repo `cliente-matheus` → site `cliente-matheus`).
+
+Após o deploy, confirme ao usuário que o site foi publicado com a URL.
